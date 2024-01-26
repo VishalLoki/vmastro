@@ -1,0 +1,145 @@
+<html>
+    <head>
+        <title>V-Mastro</title>
+        <style>
+             body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+ #l1 {
+    color: white;
+    font-size: 36px;
+    margin-top: 30px;
+    margin-bottom: 100px;
+    padding: 15px;
+    background-color: rgb(212, 50, 50);
+    text-align: center;
+    cursor:pointer;
+}
+
+#first #formm {
+    display: flex;
+    justify-content: center;
+}
+
+#first form {
+    position: absolute;
+    background-color: white;
+    border:2px solid rgb(212, 50, 50);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 300px;
+    height:235px;
+}
+
+#first label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#first input[type="text"],input[type="password"]
+{
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid rgb(212, 50, 50);
+    border-radius: 5px;
+}
+
+#first button {
+    background-color: rgb(212, 50, 50);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#first button:hover {
+    background-color: #a40000;
+}
+#hint1{
+    display: flex;
+    justify-content: center;
+}
+#hint{
+    margin-top: 300px;
+    padding:40px;
+    padding-left: 65px;
+    padding-right: 65px;
+    border: 2px solid #d4c9c9;
+    border-radius: 15px;
+    max-width: max-content;
+    height:100px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background-color: #ffffff;
+}
+#hint div{
+    color:#b2a3a3;
+}
+#hint #title,#pas{
+    margin-bottom: 20px;
+}
+::-webkit-scrollbar{
+    color: black;
+}
+        </style>
+    </head>
+    <body>
+        <div id="l1">V-Mastro Card Portal</div>
+        <div id="first">
+        <div id="formm">
+        <form action="https://vishalloki.github.io/vmastro/vmastro2.html" method="get">
+            <label for="num">UNo : </label>
+            <input type="text" id="num" name="num" placeholder="XXXX XXXX XXXX"><br><br>
+            <label for="pw">Password : </label>
+            <input type="password" id="pw" name="pw"><br><br>
+            <button id="submit">SUBMIT</button>
+        </form>
+        </div>
+        </div>
+        <div id="hint1">
+        <div id="hint">
+            <div id="title">Use Hints:</div>
+            <div id="uno">UNO : 1111 1111 1111</div>
+            <div id="pas">Password : mastro@123</div>
+            <div id="uno">UNO : 2222 2222 2222</div>
+            <div id="pas">Password : mastro@123</div>
+            <div id="uno">UNO : 3333 3333 3333</div>
+            <div id="pas">Password : mastro@123</div>
+            <div id="uno">UNO : 4444 4444 4444</div>
+            <div id="pas">Password : mastro@123</div>
+            <div id="uno">UNO : 5555 5555 5555</div>
+            <div id="pas">Password : mastro@123</div>
+            <div id="uno">UNO : 6666 6666 6666</div>
+            <div id="pas">Password : mastro@123</div>
+            <div id="uno">UNO : 7777 7777 7777</div>
+            <div id="pas">Password : mastro@123</div>
+            <div id="uno">UNO : 8888 8888 8888</div>
+            <div id="pas">Password : mastro@123</div>
+            <div id="uno">UNO : 9999 9999 9999</div>
+            <div id="pas">Password : mastro@123</div>
+            <div id="uno">UNO : 1111 1111 2222</div>
+            <div id="pas">Password : mastro@123</div>
+        </div>
+    </div>
+    <script>
+        const submit=document.getElementById("submit");
+        submit.addEventListener("click",function(){
+            var num=document.getElementById("num").value;
+            var pw=document.getElementById("pw").value;
+            var url="https://vishalloki.github.io/vmastro/vmastro2.html?num="+ encodeURIComponent(num) +"&pw="+ encodeURIComponent(pw);
+            window.location.href=url;
+        });
+    </script>
+    </body>
+</html>
