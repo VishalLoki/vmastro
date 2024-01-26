@@ -1,0 +1,147 @@
+<html>
+    <head>
+        <title>V-Mastro</title>
+        <style>
+            body{
+                padding:0;
+                margin:0;
+            }
+            #result #card
+            {
+                display:flex;
+                justify-content: center;
+                align-items: center;
+            }
+            #result #card1
+            {
+                margin-top:70px;
+                width:370px;
+                height:233px;
+                border: 1px solid rgb(186, 182, 182);
+                border-radius: 8px;
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+                overflow:hidden;
+            }
+            #result #card1 #he1
+            {
+                display:flex;
+                justify-content: center;
+                font-size: 10px;
+                background-color: rgb(219, 100, 53);
+                color:white;
+            }
+            #result #card1 #he2
+            {
+                display:flex;
+                justify-content: center;
+                font-size: 10px;
+                background-color: rgb(47, 175, 42);
+                color:white;
+            }
+            #result #sep
+            {
+                display:flex;
+                justify-content:center;
+            }
+            #result #sep #info
+            {
+                float:right;
+            }
+            #result #img img
+            {
+                margin:10px;
+                height:110px;
+                width:90px;
+            }
+            #result #info p
+            {
+                font-size: 10px;
+            }
+            #result #qr{
+                margin:10px;
+                padding-top:20px;
+            }
+            #result #qr img
+            {
+                width:90px;
+                height:90px;
+            }
+            #result b
+            {
+                display:flex;
+                justify-content: center;
+            }
+            #result #li
+            {
+                margin-top: 14px;
+                background: linear-gradient(45deg,rgb(219, 100, 53),rgb(47, 175, 42));
+                display:flex;
+                justify-content: center;
+                font-size: 11px;
+                color:white;
+            }
+            #result h1 {
+                font-size: 36px;
+                color: white;
+                margin-top: 30px;
+                padding: 15px;
+                background-color: rgb(212, 50, 50);
+                text-align: center;
+                cursor:pointer;
+            }
+    </style>
+    </head>
+    <body>
+        <div id="result"></div>
+        <script>
+            const studarr=[{num:"1111 1111 1111",pw:"mastro@123",name:"Vishal N",name1:"விஷால்",dob:"21/08/2003",gender:"Male",gender1:"ஆண்",imglink:"https://vishalloki.github.io/vmastro/vishal.png",qrlink:"https://vishalloki.github.io/vmastro/vishal.jpg"},
+            {num:"7777 7777 7777",pw:"mastro@123",name:"Chandru A",name1:"சந்துரு",dob:"15/10/2003",gender:"Male",gender1:"ஆண்",imglink:"https://vishalloki.github.io/vmastro/chan.png",qrlink:"https://vishalloki.github.io/vmastro/chan.jpg"},
+            {num:"6666 6666 6666",pw:"mastro@123",name:"Muhamad Haneef",name1:"முஹம்மது ஹனீப்",dob:"25/03/2003",gender:"Male",gender1:"ஆண்",imglink:"https://vishalloki.github.io/vmastro/hani.png",qrlink:"https://vishalloki.github.io/vmastro/hani.jpg"},
+            {num:"3333 3333 3333",pw:"mastro@123",name:"Sakthivel K",name1:"சக்திவேல்",dob:"15/01/2003",gender:"Male",gender1:"ஆண்",imglink:"https://vishalloki.github.io/vmastro/sak.png",qrlink:"https://vishalloki.github.io/vmastro/sak.jpg"},
+            {num:"2222 2222 2222",pw:"mastro@123",name:"Hariharan S",name1:"ஹரிஹரன்",dob:"25/05/2004",gender:"Male",gender1:"ஆண்",imglink:"https://vishalloki.github.io/vmastro/hari.png",qrlink:"https://vishalloki.github.io/vmastro/hari.jpg"},
+            {num:"8888 8888 8888",pw:"mastro@123",name:"Marieswaran P",name1:"மாரீஸ்வரன்",dob:"12/05/2004",gender:"Male",gender1:"ஆண்",imglink:"https://vishalloki.github.io/vmastro/maari.png",qrlink:"https://vishalloki.github.io/vmastro/maari.jpg"},
+            {num:"4444 4444 4444",pw:"mastro@123",name:"Abhilash G",name1:"அபிலாஷ்",dob:"29/02/2004",gender:"Male",gender1:"ஆண்",imglink:"https://vishalloki.github.io/vmastro/abhi.png",qrlink:"https://vishalloki.github.io/vmastro/abhi.jpg"},
+            {num:"5555 5555 5555",pw:"mastro@123",name:"Vishnu Priya P",name1:"விஷ்ணு பிரியா",dob:"14/07/2004",gender:"Female",gender1:"பெண்",imglink:"https://vishalloki.github.io/vmastro/vis.png",qrlink:"https://vishalloki.github.io/vmastro/vis.jpg"},
+            {num:"9999 9999 9999",pw:"mastro@123",name:"Abhiraj Singh",name1:"அபிராஜ் சிங்",dob:"03/04/2003",gender:"Male",gender1:"ஆண்",imglink:"https://vishalloki.github.io/vmastro/abi.png",qrlink:"https://vishalloki.github.io/vmastro/abi.jpg"},
+            {num:"1111 1111 2222",pw:"mastro@123",name:"Visweswaran GS",name1:"விஸ்வேஸ்வரன்",dob:"30/06/2003",gender:"Male",gender1:"ஆண்",imglink:"https://vishalloki.github.io/vmastro/viswes.png",qrlink:"https://vishalloki.github.io/vmastro/viswes.jpg"},
+            ];
+            var urlParams = new URLSearchParams(window.location.search);
+            var numValue = urlParams.get("num");
+            var pwValue = urlParams.get("pw");
+            const result=document.getElementById("result");
+            for(let i=0;i<studarr.length;i++)
+            {
+                if(studarr[i].num==numValue && studarr[i].pw==pwValue)
+                {
+                    result.innerHTML=`  <h1>Here your V-Mastro Card</h1>
+            <div id="card">
+            <div id="card1">
+            <p id="he1">ஐ டபிள்யூ டி அரசாங்கம்</p>
+            <p id="he2">Government of IWT</p>
+            <div id="sep">
+                <div id="img"><img src=${studarr[i].imglink} alt="photo"></div>
+                <div id="info">
+                    <p>${studarr[i].name1}</p>
+                    <p>${studarr[i].name}</p>
+                    <p>பிறந்த நாள்/DOB:${studarr[i].dob}</p>
+                    <p>${studarr[i].gender1}/${studarr[i].gender}</p>
+                </div>
+                <div id="qr"><img src=${studarr[i].qrlink} alt="QR"></div>
+            </div>
+            <b>UID: ${studarr[i].num}</b>
+            <div id="li">MY IDENTITY . எனது அடையாளம்.</div>
+        </div>
+        </div>
+        
+       `;
+        break;
+                }
+                else
+                {
+                    
+                    result.innerHTML=`<div id="red"><h1>ERROR !!! UNO and Password are Wrong</h1></div>`;
+                }
+            }
+        </script>
+    </body>
+</html>
